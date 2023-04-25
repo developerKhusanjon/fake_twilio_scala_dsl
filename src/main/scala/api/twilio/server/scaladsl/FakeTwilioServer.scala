@@ -8,6 +8,7 @@ import akka.http.scaladsl.server.Directives.{as, complete, concat, entity, get, 
 import akka.http.scaladsl.server.Route
 import spray.json.DefaultJsonProtocol.{StringJsonFormat, jsonFormat2}
 import spray.json.RootJsonFormat
+import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
 
 import scala.concurrent.{ExecutionContext, Future}
 import scala.io.StdIn
@@ -81,7 +82,7 @@ object FakeTwilioServer {
       )
 
     val bindingFuture = Http().newServerAt("localhost", 8083).bind(route)
-    println(s"Server online at http://localhost:8080/\nPress RETURN to stop...")
+    println(s"Server online at http://localhost:8083/\nPress RETURN to stop...")
     StdIn.readLine() // let it run until user presses return
     bindingFuture
       .flatMap(_.unbind()) // trigger unbinding from the port
