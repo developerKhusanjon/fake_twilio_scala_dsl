@@ -13,11 +13,14 @@ lazy val root = (project in file("."))
       Seq(
         "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion,
         "com.typesafe.akka" %% "akka-stream" % akkaVersion,
+        "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,
 
         "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
         "com.typesafe.akka" %% "akka-http-core" % akkaHttpVersion,
         "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
         "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion % Test,
+        "com.typesafe.akka" %% "akka-stream-testkit" % "2.8.0" % Test,
+        "org.scalatest" % "scalatest_2.12" % "3.2.15" % Test,
 
         "com.typesafe.slick" %% "slick" % slickVersion,
         "com.typesafe.slick" %% "slick-hikaricp" % slickVersion,

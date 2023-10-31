@@ -1,0 +1,7 @@
+/project/.bloop/
+/project/project/project/target/config-classes/
+/project/project/target/
+/project/target/
+/target/
+/.bsp/
+/.idea/
